@@ -1,7 +1,19 @@
 class StoresController < ApplicationController
+  before_action :authenticate!, except: [:index, :show]
+
   # GET /stores
   def index
-    @stores = Store.all
+    if params[:cuisine].present?
+      @stores = Store.where(cuisine: params[:cuisine])
+    else
+      @stores = Store.all
+    end
+  end
+
+  def lucky
+    store = Store.all.sample
+
+    redirect_to store
   end
 
   # GET /stores/1

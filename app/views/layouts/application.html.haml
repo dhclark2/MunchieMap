@@ -32,12 +32,10 @@
             %li.active
               = link_to "Home", root_path
           %ul.nav.navbar-nav.navbar-right
-            %li.navbar-text
-              Search
-          -# = form_tag(store_path, method: "GET", class: "navbar-form navbar-right") do
-          -#   .form-group
-          -#     = select_tag :cuisine, options_for_select(Store::CUISINES, params[:cuisine]), class: 'form-control'
-          -#   = button_tag "Search", class: "btn btn-default"
+          = form_tag(stores_path, method: "GET", class: "navbar-form navbar-right") do
+            .form-group
+              = select_tag :cuisine, options_for_select(Store::CUISINES, params[:cuisine]), class: 'form-control'
+            = button_tag "Search", class: "btn btn-default"
           %ul.nav.navbar-nav.navbar-right
             - if logged_in?
               %li.navbar-text

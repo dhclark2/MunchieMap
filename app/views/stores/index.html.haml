@@ -2,10 +2,17 @@
   = link_to new_store_path, class: 'btn btn-primary' do
     %span.glyphicon.glyphicon-plus
     New Store
-  %h1 Listing stores
+  = link_to lucky_stores_path, class: 'btn btn-info' do
+    Feeling Lucky?
 
-.table-responsive
+- if @stores.empty?
+  .jumbotron
+    %h1 No Results Found
+- else
+  .table-responsive
+    %h1 Store Listings
   %table.table.table-striped.table-bordered.table-hover
+    %thead
     %thead
       %tr
         %th Name
@@ -17,7 +24,7 @@
         %th Cuisine
         %th Menu
         %th Images
-        %th{colspan: 3}
+        %th{colspan: 3} Show/Edit/Delete
 
     %tbody
       - @stores.each do |store|
