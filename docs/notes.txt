@@ -1,0 +1,28 @@
+Store model
+  - Name                :string
+  - Type of food        :string
+  - Address             :sting
+  - Hours of operation  :text
+  - Menu (pdf)          :string (refile)
+  - Price               :integer
+  - Phone number        :string
+  - Website link        :string
+
+    + has_many pictures
+    + has_many votes
+
+User model
+  - omniauth
+
+    + has_many votes
+
+Voting model
+
+    + belong_to User
+    + belong_to MunchieMap
+
+Pictures model
+  - Landing page picture
+    - paginated pictures
+
+    + belongs_to MunchieMap
