@@ -1,11 +1,15 @@
 Store model
   - Name                :string
+      - REQUIRED
   - Type of food        :string
   - Address             :sting
+      - REQUIRED
   - Hours of operation  :text
+      - REQUIRED
   - Menu (pdf)          :string (refile)
   - Price               :integer
   - Phone number        :string
+      - REQUIRED
   - Website link        :string
 
     + has_many pictures
