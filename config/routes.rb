@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
   root "stores#index"
+
+  get "pages/about"
+
+  get "pages/help"
+  
   resources :stores do
     collection do
       get :lucky

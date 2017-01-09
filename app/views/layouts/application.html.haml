@@ -26,11 +26,15 @@
             %span.icon-bar
             %span.icon-bar
           = link_to root_path, class: "navbar-brand" do
-            MunchieMap
+            = image_tag("munchie_icon.jpg", size: "60x30")
         #navbar.collapse.navbar-collapse
           %ul.nav.navbar-nav
             %li.active
               = link_to "Home", root_path
+            %li
+              = link_to "About", pages_about_path
+            %li
+              = link_to "Help", pages_help_path
           %ul.nav.navbar-nav.navbar-right
           = form_tag(stores_path, method: "GET", class: "navbar-form navbar-right") do
             .form-group
