@@ -7,20 +7,71 @@
     Edit
   %h1 Show store
 
-%dl.dl-horizontal
-  %dt Name:
-  %dd= @store.name
-  %dt Address:
-  %dd= @store.address
-  %dt Phone:
-  %dd= @store.phone
-  %dt Website:
-  %dd= @store.website
-  %dt Hours:
-  %dd= @store.hours
-  %dt Price:
-  %dd= price_as_dollar_signs(@store.price)
-  %dt Cuisine:
-  %dd= @store.cuisine
-  %dt Menu:
-  %dd= @store.menu_id
+.container
+  .row
+    .col-lg-12
+      %h2.page-header
+        = @store.name
+      %h3
+        = @store.address
+  .row
+    -# .col-md-8
+    -#   - store.pictures.each do |picture|
+    -#     = image_tag attachment_url(picture, :image), size: "200x200"
+
+    .col-md-4
+      %h3
+        Cuisine
+      %p.text-justify
+        = @store.cuisine
+      %h3
+        Contact Info
+      %p
+        Hours Open:
+        = @store.hours
+      %p
+        Price:
+        = @store.price
+      %p
+        Store Website:
+        = @store.website
+      -# %p
+      -#   = link_to menu_store_path(@store), class: 'btn btn-primary' do
+      -#     %span.glyphicon.glyphicon-paperclip
+      -#     Menu
+      -# %h3
+      -#   Property Features
+      -# %ul
+      -#   %li
+      -#     Square Feet:
+      -#     = @store.sq_ft
+      -#   %li
+      -#     Bathrooms:
+      -#     = @store.bathrooms
+      -#   %li
+      -#     Bedrooms:
+      -#     = @store.bedrooms
+
+  .row
+    .col-lg-12
+      %h3.page-header
+        More Pictures
+        -# .col-sm-3.col-xs-6
+        -#   - store.pictures.each do |picture|
+        -#     = image_tag attachment_url(picture, :image), size: "200x200"
+
+    -#   %img.img-responsive.portfolio-item{:alt => "Image_2", :src => "http://placehold.it/500x300"}/
+    -# .col-sm-3.col-xs-6
+    -#   %img.img-responsive.portfolio-item{:alt => "Image_3", :src => "http://placehold.it/500x300"}/
+    -# .col-sm-3.col-xs-6
+    -#   %img.img-responsive.portfolio-item{:alt => "Image_4", :src => "http://placehold.it/500x300"}/
+    -# .col-sm-3.col-xs-6
+    -#   %img.img-responsive.portfolio-item{:alt => "Image_5", :src => "http://placehold.it/500x300"}/
+
+  %hr/
+
+  %footer
+    .row
+      .col-lg-12
+        %p
+          Copyright © Ham is super awesome - 2016

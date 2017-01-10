@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
-  root "stores#index"
+  root "pages#landing"
 
   get "pages/about"
-
+  get "pages/landing"
   get "pages/help"
-  
+
   resources :stores do
     collection do
       get :lucky

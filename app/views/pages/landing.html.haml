@@ -1,0 +1,108 @@
+.slider-area
+  .zigzag-bottom
+  #slide-list.carousel.carousel-fade.slide{"data-ride" => "carousel"}
+    .slide-bulletz
+      .container
+        .row
+          .col-md-12
+            %ol.carousel-indicators.slide-indicators
+              %li.active{"data-slide-to" => "0", "data-target" => "#slide-list"}
+              %li{"data-slide-to" => "1", "data-target" => "#slide-list"}
+    .carousel-inner{:role => "listbox"}
+      .item.active
+        .single-slide
+          .slide-bg.around-the-world-hero
+          .slide-text-wrapper
+            .slide-text
+              .container
+                .row
+                  .col-md-6.col-md-offset-6
+                    .slide-content
+                      %h2 Dining Around The World
+                      %p Welcome to the best store search app ever created
+                      %p Implemented by Cohort 6 Rails Team at The Iron Yard
+                      = link_to "Checkout the Code!", "https://github.com/tiy-tpa-ruby/AroundTheWorld", class: "readmore"
+      .item
+        .single-slide
+          .slide-bg.created-with-rails
+          .slide-text-wrapper
+            .slide-text
+              .container
+                .row
+                  .col-md-6.col-md-offset-6
+                    .slide-content
+                      %h2 Created with Rails
+                      %p We used Rails, Bootstrap, Omniauth, ActiveRecord and other great tools
+                      = link_to "Learn about Rails", "http://guides.rubyonrails.org", class: "readmore"
+/ End slider area
+
+.promo-area
+  .zigzag-bottom
+  .container
+    .row
+      .col-md-4.col-sm-12
+        .single-promo
+          %i.fa.fa-truck
+          %p Delivery!
+      .col-md-4.col-sm-12
+        .single-promo
+          %i.fa.fa-lock
+          %p Secure payments
+      .col-md-4.col-sm-12
+        .single-promo
+          %i.fa.fa-gift
+          %p New dining experiences
+/ End promo area
+.maincontent-area
+  .zigzag-bottom
+  .container
+    .row
+      .col-md-12
+        .latest-product
+          %h2.section-title Latest stores
+          .product-carousel
+            - @latest_stores.each do |store|
+              .single-product
+                .product-f-image
+                  - if store.pictures.any?
+                    = image_tag attachment_url(store.pictures.first, :image), size: "200x200"
+                  - else
+                    = image_tag "default-store-image.jpg", size: "200x200"
+                  .product-hover
+                    = link_to store, class: "view-details-link" do
+                      %i.fa.fa-link
+                      See details
+                %h2
+                  = link_to store.name, store
+
+/ End main content area
+.brands-area
+  .zigzag-bottom
+  .container
+    .row
+      .col-md-12
+        .brand-wrapper
+          %h2.section-title Cuisines
+          .brand-list
+            = link_to stores_path(cuisine: "italian") do
+              = image_tag "munchie_icon.jpg"
+            = link_to stores_path(cuisine: "burgers") do
+              = image_tag "munchie_icon.jpg"
+
+.footer-bottom-area
+  .container
+    .row
+      .col-md-8
+        .copyright
+          %p
+            \© 2015 Around the World. All Rights Reserved. Coded with
+            %i.fa.fa-heart
+            by
+            %a{:href => "http://theironyard.com", :target => "_blank"} The Iron Yard
+      .col-md-4
+        .footer-card-icon
+          %i.fa.fa-cc-discover
+          %i.fa.fa-cc-mastercard
+          %i.fa.fa-cc-paypal
+          %i.fa.fa-cc-visa
+/ End footer bottom area
