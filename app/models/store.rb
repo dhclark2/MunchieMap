@@ -15,6 +15,6 @@ class Store < ApplicationRecord
   validates :phone, presence: true
 
   attachment :menu
-
+  attachment :picture
   has_many :pictures
 end

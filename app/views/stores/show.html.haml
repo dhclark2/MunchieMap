@@ -13,53 +13,47 @@
       %h2.page-header
         = @store.name
       %h3
+        %i.fa.fa-map-o
         = @store.address
+      %h4
+        %i.fa.fa-phone-square
+        %a{:href => "store.phone"}
+        = @store.phone
   .row
-    -# .col-md-8
-    -#   - store.pictures.each do |picture|
-    -#     = image_tag attachment_url(picture, :image), size: "200x200"
+    .col-md-8
+      -# = image_tag attachment_url(@store, :picture), size: "750x500"
 
     .col-md-4
       %h3
         Cuisine
       %p.text-justify
+        %i.fa.fa-cutlery
         = @store.cuisine
       %h3
         Contact Info
-      %p
+      %p.text-justify
+        %i.fa.fa-hourglass-2
         Hours Open:
         = @store.hours
-      %p
+      %p.text-justify
+        %i.fa.fa-money
         Price:
-        = @store.price
-      %p
+        = price_as_dollar_signs(@store.price)
+      %p.text-justify
+        %i.fa.fa-paperclip
+        = link_to "Store Menu", attachment_url(@store, :menu, format: "pdf")
+      %p.text-justify
+        %i.fa.fa-chrome
         Store Website:
-        = @store.website
-      -# %p
-      -#   = link_to menu_store_path(@store), class: 'btn btn-primary' do
-      -#     %span.glyphicon.glyphicon-paperclip
-      -#     Menu
-      -# %h3
-      -#   Property Features
-      -# %ul
-      -#   %li
-      -#     Square Feet:
-      -#     = @store.sq_ft
-      -#   %li
-      -#     Bathrooms:
-      -#     = @store.bathrooms
-      -#   %li
-      -#     Bedrooms:
-      -#     = @store.bedrooms
-
+        = link_to @store.website
   .row
     .col-lg-12
       %h3.page-header
         More Pictures
-        -# .col-sm-3.col-xs-6
-        -#   - store.pictures.each do |picture|
-        -#     = image_tag attachment_url(picture, :image), size: "200x200"
-
+        .col-sm-3.col-xs-6
+          - @store.pictures.each do |picture|
+            = image_tag attachment_url(picture, :image), size: "200x200"
+    -# .col-sm-3.col-xs-6
     -#   %img.img-responsive.portfolio-item{:alt => "Image_2", :src => "http://placehold.it/500x300"}/
     -# .col-sm-3.col-xs-6
     -#   %img.img-responsive.portfolio-item{:alt => "Image_3", :src => "http://placehold.it/500x300"}/
