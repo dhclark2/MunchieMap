@@ -1,5 +1,4 @@
 
-
 # PANERA BREAD
 panera_bread = Store.create!(name: "Panera Bread", address: "1908 4th St N, St. Petersburg, FL 33704",
                             phone: "(727) 895-5441", website: "panerabread.com", hours: "6AM - 9PM",
@@ -48,3 +47,18 @@ picture = Picture.create!(store: cassis,
                           image: File.open(Rails.root.join("db/seeds/cassis/cassis_3.jpeg")))
 picture = Picture.create!(store: cassis,
                           image: File.open(Rails.root.join("db/seeds/cassis/cassis_4.jpeg")))
+
+# Coopers Hawk
+coopers_hawk = Store.create!(name: "Cooper's Hawk", address: "4110 W Boy Scout Blvd, Tampa, FL 33607",
+                            phone: "(813) 873-9463", website: "coopershawkwinery.com", hours: "11AM - 9:30PM",
+                            price: 5, cuisine: "American Fusion",
+                            menu: File.open(Rails.root.join("db/seeds/coopers_hawk/coopershawk_menu.pdf")))
+
+picture = Picture.create!(store: coopers_hawk,
+                          image: File.open(Rails.root.join("db/seeds/coopers_hawk/hawk_1.jpg")))
+picture = Picture.create!(store: coopers_hawk,
+                          image: File.open(Rails.root.join("db/seeds/coopers_hawk/hawk_2.jpg")))
+picture = Picture.create!(store: coopers_hawk,
+                          image: File.open(Rails.root.join("db/seeds/coopers_hawk/hawk_3.jpg")))
+picture = Picture.create!(store: coopers_hawk,
+                          image: File.open(Rails.root.join("db/seeds/coopers_hawk/hawk_4.jpg")))
