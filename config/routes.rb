@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get "pages/about"
   get "pages/landing"
   get "pages/help"
+  get "stores/new"
 
   resources :stores do
     collection do

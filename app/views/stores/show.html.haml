@@ -20,9 +20,6 @@
         %a{:href => "store.phone"}
         = @store.phone
   .row
-    .col-md-8
-      -# = image_tag attachment_url(@store, :picture), size: "750x500"
-
     .col-md-4
       %h3
         Cuisine
@@ -49,19 +46,11 @@
   .row
     .col-lg-12
       %h3.page-header
-        More Pictures
-        .col-sm-3.col-xs-6
-          - @store.pictures.each do |picture|
-            = image_tag attachment_url(picture, :image), size: "200x200"
-    -# .col-sm-3.col-xs-6
-    -#   %img.img-responsive.portfolio-item{:alt => "Image_2", :src => "http://placehold.it/500x300"}/
-    -# .col-sm-3.col-xs-6
-    -#   %img.img-responsive.portfolio-item{:alt => "Image_3", :src => "http://placehold.it/500x300"}/
-    -# .col-sm-3.col-xs-6
-    -#   %img.img-responsive.portfolio-item{:alt => "Image_4", :src => "http://placehold.it/500x300"}/
-    -# .col-sm-3.col-xs-6
-    -#   %img.img-responsive.portfolio-item{:alt => "Image_5", :src => "http://placehold.it/500x300"}/
-
+        Pictures
+  .row
+    .col-lg-12
+    - @store.pictures.each do |picture|
+      = image_tag attachment_url(picture, :image), size: "200x200"
   %hr/
 
   %footer
